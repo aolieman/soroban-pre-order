@@ -1,0 +1,26 @@
+[workspace]
+resolver = "2"
+
+members = [
+    "pre-order"
+]
+
+[profile.release]
+opt-level = "z"
+overflow-checks = true
+debug = 0
+strip = "symbols"
+debug-assertions = false
+panic = "abort"
+codegen-units = 1
+lto = true
+
+[workspace.dependencies.soroban-sdk]
+version = "0.4.3"
+git = "https://github.com/stellar/rs-soroban-sdk"
+rev = "51e5e6d"
+
+[workspace.dependencies.soroban-auth]
+version = "0.4.3"
+git = "https://github.com/stellar/rs-soroban-sdk"
+rev = "51e5e6d"
